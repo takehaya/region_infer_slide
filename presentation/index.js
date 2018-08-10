@@ -4,7 +4,6 @@ import React from "react";
 // Import Spectacle Core tags
 import {
   BlockQuote,
-  Cite,
   Deck,
   Heading,
   ListItem,
@@ -12,8 +11,7 @@ import {
   Quote,
   Slide,
   Text,
-  Image,
-  Markdown
+  Image
 } from "spectacle";
 
 // Import theme
@@ -47,7 +45,7 @@ export default class Presentation extends React.Component {
         
         <Slide transition={["fade"]} bgColor="tertiary">
           <Heading size={1} textColor="primary">目的</Heading>
-          <Heading size={2} textColor="secondary">最近流行りのメモリを管理する手法の一つを理解してイケてるやつになる</Heading>
+          <Heading size={2} textColor="secondary">最近流行りのメモリを管理する手法の一つを理解してイケメンになる</Heading>
           <Heading size={6} textColor="secondary">（雰囲気が分かればおっけー）</Heading>
         </Slide>
 
