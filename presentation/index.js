@@ -97,6 +97,8 @@ export default class Presentation extends React.Component {
             <ListItem>メモリの扱いを静的に決定して実行時にできるだけ最適なメモリ割り当てができないだろうかというアプローチ手法</ListItem>
             <ListItem>型システム上で管理するメモリ管理手法(GC)</ListItem>
             <ListItem>Region->名前付きstack領域を示すもの</ListItem>
+            <ListItem>今回は時間と難易度の問題で肝心の推論規則の話などはしません・・・興味のある人は声かけてね！</ListItem>
+
           </List>
         </Slide>
         <Slide transition={["fade"]} bgColor="primary" textColor="tertiary">
@@ -123,17 +125,76 @@ export default class Presentation extends React.Component {
         </Slide>
 
         <Slide transition={["fade"]} bgColor="primary" textColor="tertiary">
+          <Heading size={6} textColor="secondary" caps>let式の例</Heading>
+          <Image src="https://i.imgur.com/n4pGFZV.png" />
+        </Slide>
+
+        <Slide transition={["fade"]} bgColor="primary" textColor="tertiary">
           <Heading size={6} textColor="secondary" caps>regionの割り当て</Heading>
           <Image src="https://i.imgur.com/pqF7ofp.png" />
         </Slide>
 
+        <Slide transition={["fade"]} bgColor="tertiary">
+          <Heading size={1} textColor="primary" caps>🎉🎉🎉🎉</Heading>
+          <Heading size={3} textColor="primary" caps>これで無事リージョンが書き込みと読み込み</Heading>
+          <Heading size={3} textColor="primary" caps>で働いていることを確認できました！</Heading>
+
+        </Slide>
+
         <Slide transition={["fade"]} bgColor="secondary" textColor="primary">
           <BlockQuote>
-            <Quote>Example Quote</Quote>
-            <Cite>Author</Cite>
+            <Quote>これで嬉しいことや実用の雑多な話</Quote>
           </BlockQuote>
         </Slide>
 
+        <Slide transition={["fade"]} bgColor="primary" textColor="tertiary">
+          <Heading size={6} textColor="secondary" caps>このスライドで話せてなかったこと</Heading>
+          <List>
+            <ListItem>リージョン推論についての規則までは示していない</ListItem>
+            <ListItem>リージョン推論のioを示したが，リージョンのサイズに関する最適化 </ListItem>
+            <ListItem>つまりmalloc realloc free相当の機能（適当） </ListItem>
+          </List>
+        </Slide>
+
+        <Slide transition={["fade"]} bgColor="primary" textColor="tertiary">
+          <Heading size={6} textColor="secondary" caps>嬉しいこと</Heading>
+          <List>
+            <ListItem>型システム上でメモリを管理ができるので数理的に正しい意味を持ったGCができた</ListItem>
+            <ListItem>正しさを持っているので形式的な検証が可能になる</ListItem>
+          </List>
+        </Slide>
+
+        <Slide transition={["fade"]} bgColor="primary" textColor="tertiary">
+          <Heading size={6} textColor="secondary" caps>実用例</Heading>
+          <List>
+            <ListItem>Rust lang</ListItem>
+            <ListItem>Mozillaが作った言語</ListItem>
+            <ListItem>ググりラビリてぃが悪い(rustは錆びなのでライブラリ含め鉄ぽい話が多い）</ListItem>
+            <ListItem>リージョンサイズはアフィン型は全てのリソースに対リソースが最大でも1回しか消費されないことを要求する型システムを用いてサイズを求めてる</ListItem>
+          </List>
+        </Slide>
+        <Slide transition={["fade"]} bgColor="primary" textColor="tertiary">
+          <Heading size={6} textColor="secondary" caps>実用例</Heading>
+          <List>
+            <ListItem>自作OS</ListItem>
+            <ListItem>型システム上で絶対正しいのでC++の代わりのようにみんな使ってる．セグフォが出ない</ListItem>
+            <ListItem>セグフォが出ない</ListItem>
+            <ListItem>最高</ListItem>
+          </List>
+        </Slide>
+        <Slide transition={["fade"]} bgColor="secondary" textColor="primary">
+          <BlockQuote>
+            <Quote>まとめ</Quote>
+          </BlockQuote>
+        </Slide>
+        <Slide transition={["fade"]} bgColor="primary" textColor="tertiary">
+          <Heading size={6} textColor="secondary" caps>まとめ</Heading>
+          <List>
+            <ListItem>リージョンについて話した</ListItem>
+            <ListItem>Rustみんな使いましょう</ListItem>
+            <ListItem>セグフォが出ない.最高！！</ListItem>
+          </List>
+        </Slide>
       </Deck>
     );
   }
